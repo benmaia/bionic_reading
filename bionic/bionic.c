@@ -10,8 +10,8 @@ void	bionic(char *s)
 	while (matriz[++i])
 	{
 			strcat(matriz[i], " "); //concatenates the word in the array with a space in the end
-			if (strlen(matriz[i]) <= 3)
-				printf(BOLD"%s", matriz[i]);
+			if (strlen(matriz[i]) <= 3)     //if the word has 2 letters or less
+				printf(BOLD"%s", matriz[i]); // printf the word in BOLD
 			else
 			{
 					tmp = ft_substr(matriz[i], 0, (strlen(matriz[i]) / 2)); // gets the first half of the word
