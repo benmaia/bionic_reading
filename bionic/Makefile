@@ -16,7 +16,7 @@ $(NAME): $(OBJS)
 	@$(CC) -I$(INC) -c $(^) -o $(@)
 
 clean:
-	@rm -rf srcs/$(OBJS)
+	@rm -rf srcs/*.o
 	@rm -rf $(NAME)
 
 re: clean all
