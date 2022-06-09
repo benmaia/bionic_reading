@@ -4,9 +4,10 @@
 #include <unistd.h>
 #include <string.h>
 
-#define BOLD  "\e[1m"
-#define RESET   "\e[m"
+#define BOLD  "**"
 
 char	**ft_split(char const *s, char c);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+char *get_next_line(int fd); 

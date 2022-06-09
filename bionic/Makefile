@@ -1,20 +1,22 @@
 NAME = bionic
 
-SRCS = $(wildcard *.c)
+INC = include
+SRCS = $(wildcard srcs/*.c)
+OBJS_DIR = objs
 OBJS = $(SRCS:%.c=%.o)
 
 CC = gcc
 
-%.o: %.c
-	@$(CC) -c $(^) -o $(@)
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) -I./ -o $(@) $(^)
+	@$(CC) -I$(INC) -o $(@) $(^)
+
+%.o: %.c
+	@$(CC) -I$(INC) -c $(^) -o $(@)
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf srcs/$(OBJS)
 	@rm -rf $(NAME)
 
 re: clean all
